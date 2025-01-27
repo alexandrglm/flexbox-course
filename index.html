@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index - Flex Direction</title>
+    <script>
+    // Rebuscadima forma de suplir la falta de gulp / browser-sync con python (flask, SocketIo, watchdog) y esta necesaria inserción en cada html
+    const socket = io();
+    socket.on('reload', () => {
+	    console.log("Change detected, reloading page...");
+	    location.reload();
+    });
+
+    </script>
     <style>
         body {
             margin:0;
