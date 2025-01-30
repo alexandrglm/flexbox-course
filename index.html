@@ -1,38 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            /* debug */
-            border: 10px solid red;
-            width: calc(100vw - 20px);
-            height: calc(100vh - 20px);
-            margin: 0;
+  <meta charset='UTF-8'>
+  <title></title>
+  <style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        /* debug */
+        margin: 0;
+        height: calc(100vh - 20px);
+        width: calc(100vw - 20px);
+        border: 10px solid red;
 
-            display: flex;
-            justify-content: center;
-        }
-        .imgBlocks {
-            display: flex;
-            flex-direction: column; /* row is the default */
-            justify-content: flex-end; /* flex-start is the default */
-        }
-    </style>
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .blocks {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1000px;
+    
+    }
+    .block {
+        background-color:limegreen;
+        height: 200px;
+        margin: 20px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .block1 {
+        flex-basis: 400px;
+    }
+    .block2 {
+        flex-basis: 100px;
+    }
+    .block3 {
+        flex-basis: 200px;
+    }
+  </style>
 </head>
 <body>
     <div class="container">
-        <div class="imgBlocks">
-            <img src="https://picsum.photos/150/150" alt="">
-            <img src="https://picsum.photos/150/150" alt="">
-            <img src="https://picsum.photos/150/150" alt="">
-        </div>    
+        <div class="blocks">
+            <div class="block block1">1</div>
+            <div class="block block2">2</div>
+            <div class="block block3">3</div>
+        </div>
     </div>
 </body>
 </html>

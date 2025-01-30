@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        /* Flexbox nested containers */
+        .container {
+            /* debug */
+            border: 10px solid red;
+            width: calc(100vw - 20px);
+            height: calc(100vh - 20px);
+            margin: 0;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+
+        }
+        .imgBlocks {
+            display: flex;
+            flex-direction: row; /* row is the default */
+            
+            justify-content: center; /* flex-start is the default */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="imgBlocks">
+            <img src="https://picsum.photos/150/150" alt="">
+            <img src="https://picsum.photos/150/150" alt="">
+            <img src="https://picsum.photos/150/150" alt="">
+        </div>    
+    </div>
+</body>
+</html>
