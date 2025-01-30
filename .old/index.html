@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index - Flex Direction</title>
+    <script>
+    // Rebuscadima forma de suplir la falta de gulp / browser-sync con python (flask, SocketIo, watchdog) y esta necesaria inserción en cada html
+    const socket = io();
+    socket.on('reload', () => {
+	    console.log("Change detected, reloading page...");
+	    location.reload();
+    });
+
+    </script>
+    <style>
+        body {
+            margin:0;
+            padding: 0;
+        }
+
+        .container {
+            margin:0;
+            height: calc(100vh - 20px);
+            width: calc(100vw - 20px);
+            border:10px solid red;
+            display:flex;
+            justify-content:center;
+        }
+
+        .container > .imgBlocks {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="imgBlocks">
+            <img src="https://picsum.photos/150/150">
+            <img src="https://picsum.photos/150/150">
+            <img src="https://picsum.photos/150/150">
+        </div>
+    </div>
+</body>
+</html>
