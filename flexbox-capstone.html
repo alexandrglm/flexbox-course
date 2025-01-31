@@ -12,21 +12,53 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <style>
-        .navbarContainer { 
-            display: flex;
-            
+        body {
+            margin:0;
+            font: 2em bold;
+            font-family: "Lato", sans-serif;
         }
-        .navbar { }
-        .menu {}
-        .links {}
+
+        a {
+            color: whitesmoke;
+        }
+
+        .navbarContainer {
+            background-color: #17569b; 
+            display: flex;
+            align-items: center;
+            height: 3rem;
+        }
+        .navbar {
+            margin: 10px;
+            display: flex;
+            align-items: center;
+        } 
+        .menu { 
+        }
+        .links {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1em;
+
+            font-family: "Lato", serif;
+            font-size: 0.7em;
+            margin: 0 0 0 15px;           
+        }
+        .fa-solid {
+            margin:0 20px 0 0;
+            color: black;
+        }
+        .logo {
+            width: 100px;
+        }
 
     </style>
 </head>
-<body>
+<header>
     <div class="navbarContainer">
         <div class="navbar">
             <a href="#"><i class="fa-solid fa-bars"></i></a>
-            <a class="menu" href="#">Menu</a>
+            <img class="logo" src="./sega.png">
         </div>
         <div class="links">
             <a href="#">Link 1</a>
@@ -34,5 +66,8 @@
             <a href="#">Link 3</a>
         </div>
     </div>
+</header>
+<body>
+
 </body>
 </html>
