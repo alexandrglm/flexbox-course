@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Title Cards</title>
+    <!-- Google fonts importing method updated -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- FontAwesome kit 6.7.2 updated. -->
+    <script src="https://use.fontawesome.com/releases/v6.7.2/js/solid.js" crossorigin="anonymous" defer></script>
+    <script src="https://use.fontawesome.com/releases/v6.7.2/js/fontawesome.js" crossorigin="anonymous" defer></script>
+    <style>
+        .container {}
+        .container .item {}
+        .container .item .content {}
+        .container .item .content .metadata {}
+        .container .item .content .metadata .title {}
+        .container .item .buttonGroup {}
+        .container .item .buttonGroup .button {}
+        .container .item .buttonGroup .button a {}
+        .container .item .buttonGroup .button:hover {}
+        .container .item .buttonGroup .button:hover a {}
+        .item .featured {}
+        .item .associated {}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item featured">
+            <div class="content">
+                <img>
+                <div class="metadata">
+                    <h1></h1>
+                    <h3></h3>
+                </div>
+            </div>
+            <div class="buttonGroup">
+                <div class="button">
+                    <a href="#">
+                        <i class="fas fa-plus-circle"></i>
+                    </a>
+                </div>
+                <div class="button">
+                    <a href="#">
+                        <i class="fas fa-times-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="item associated">
+            <div class="content">
+                <img>
+                <div class="metadata">
+                    <h1 class="title">Title</h1>
+                </div>
+            </div>
+            <div class='btn-group'>
+                <div class='button'>
+                    <a href="#">
+                        <i class="fas fa-plus-circle"></i>
+                    </a>
+                </div>
+                <div class='button'>
+                    <a href="#">
+                        <i class="fas fa-times-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
