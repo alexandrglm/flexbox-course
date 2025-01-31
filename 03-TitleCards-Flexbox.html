@@ -11,29 +11,130 @@
     <!-- FontAwesome kit 6.7.2 updated. -->
     <script src="https://use.fontawesome.com/releases/v6.7.2/js/solid.js" crossorigin="anonymous" defer></script>
     <script src="https://use.fontawesome.com/releases/v6.7.2/js/fontawesome.js" crossorigin="anonymous" defer></script>
+    <!-- Added for an inspection button-->
+    <script>
+        /**
+         * Step-by-Step
+         * 1. "inspector view button" catching
+         * 2. if / else something with querySelections
+         * 3. A function manipulates DOM elements removing, or not, some css elements (Debug-Background colors) by catching them as string "/* debuug* / \n background-color:...".
+         * It can uses eval(), new Function, or something else.
+        */
+
+        // A const catches the status of Inspector View button, to do one thing or something
+        const inspectorView = document.getElementsByClassName('inspector');
+
+        if () {
+            document.querySelector('/* debug */\nbackground-color:')
+        } else {
+
+        }
+
+
+    </script>
     <style>
-        .container {}
-        .container .item {}
-        .container .item .content {}
-        .container .item .content .metadata {}
-        .container .item .content .metadata .title {}
-        .container .item .buttonGroup {}
-        .container .item .buttonGroup .button {}
-        .container .item .buttonGroup .button a {}
-        .container .item .buttonGroup .button:hover {}
-        .container .item .buttonGroup .button:hover a {}
-        .item .featured {}
-        .item .associated {}
+        body {
+            font-family: "Lato", sans-serif;
+        }
+        .container {
+            display: flex;
+            /* debug*/
+            background-color: lightcoral;
+        }
+        .container .item {
+            /* debug */
+            background-color: lightgreen;
+
+            display: flex;
+            flex: 1; /* Flex property combines Basis + Grow + Shrink */
+            justify-content: space-between;
+           
+            border: 1px solid gray;
+            border-radius: 5px;
+            margin: 10px;
+
+
+        }
+        .container .item .content {
+            /* debug*/
+            background-color: lightblue;
+            
+            display: flex;
+        }
+        .container .item .content .metadata {
+            /* debug*/
+            background-color: lightyellow;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 0 0 20px; /* This margin is overrided on the bottom by the next .title margin */
+        }
+        .container .item .content .metadata .title {
+            margin: 0px; /* This margin overrides the .item margin, restoring no-margins for IMG */
+
+            /* debug */
+            background-color: lightseagreen
+        }
+        .container .item .buttonGroup {
+            /* debug */
+            background-color: lightpink;
+            
+            display: flex;
+            align-items: flex-end;
+            align-items: center;
+
+        }
+        .container .item .buttonGroup .button {
+            /* debug */
+            background-color: aliceblue;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            height: 50%;
+            width: 42px;
+
+            font-size: 2em;
+
+        }
+        .container .item .buttonGroup .button a {
+            /* debug */            
+            background-color: lightseagreen;
+
+            text-decoration: none;
+
+        }
+        .container .item .buttonGroup .button:hover {
+            background-color: lightslategray;
+            cursor: pointer;
+
+        }
+        .container .item .buttonGroup .button:hover a {
+            color: whitesmoke;
+        }
+        .item .featured {
+            flex: auto;
+        }
+        .item .associated {
+            flex: initial;
+        }
+
+        .debugButton {
+            margin:5rem 0 0 1rem;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="item featured">
             <div class="content">
-                <img>
+                <img src="https://picsum.photos/200/120" width="200px" height="120px">
                 <div class="metadata">
-                    <h1></h1>
-                    <h3></h3>
+                    <h1 class="title">Title Card post 1 </h1>
+                    <h3>Subtitle for Card 1</h3>
                 </div>
             </div>
             <div class="buttonGroup">
@@ -51,24 +152,27 @@
         </div>
         <div class="item associated">
             <div class="content">
-                <img>
+                <img src="https://picsum.photos/200/120" width="200px" height="120px">
                 <div class="metadata">
-                    <h1 class="title">Title</h1>
+                    <h1 class="title">Title card 2</h1>
                 </div>
             </div>
-            <div class='btn-group'>
-                <div class='button'>
+            <div class="buttonGroup">
+                <div class="button">
                     <a href="#">
                         <i class="fas fa-plus-circle"></i>
                     </a>
                 </div>
-                <div class='button'>
+                <div class="button">
                     <a href="#">
                         <i class="fas fa-times-circle"></i>
                     </a>
                 </div>
             </div>
         </div>
+    </div>
+    <div>
+        <button class="debugButton" onclick="inspector">Inspector View?</button>
     </div>
 </body>
 </html>
