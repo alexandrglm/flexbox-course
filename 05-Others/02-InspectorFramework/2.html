@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Title Cards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v6.7.2/js/solid.js" crossorigin="anonymous" defer></script>
+    <script src="https://use.fontawesome.com/releases/v6.7.2/js/fontawesome.js" crossorigin="anonymous" defer></script>
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+        .container {
+            display: flex;
+        }
+        .container .item {
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+            border: 1px solid gray;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        .container .item .content {
+            display: flex;
+        }
+        .container .item .content .metadata {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 0 0 20px;
+        }
+        .container .item .buttonGroup {
+            display: flex;
+            align-items: center;
+        }
+        .container .item .buttonGroup .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 90%;
+            width: 42px;
+            font-size: 2em;
+            cursor: pointer;
+        }
+        .item .featured {
+            flex: auto;
+        }
+        .item .associated {
+            flex: initial;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item featured">
+            <div class="content">
+                <img src="https://picsum.photos/200/120" width="200px" height="120px">
+                <div class="metadata">
+                    <h1 class="title">Title Card post 1 </h1>
+                    <h3 class="subtitle">Subtitle for Card 1</h3>
+                </div>
+            </div>
+            <div class="buttonGroup">
+                <div class="button toggle-active">
+                    <a href="javascript:void(0);">
+                        <i class="fas fa-eye"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="item associated">
+            <div class="content">
+                <img src="https://picsum.photos/200/120" width="200px" height="120px">
+                <div class="metadata">
+                    <h1 class="title">Title card 2</h1>
+                </div>
+            </div>
+            <div class="buttonGroup">
+                <div class="button toggle-active">
+                    <a href="javascript:void(0);">
+                        <i class="fas fa-eye"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.toggle-active').forEach(button => {
+            button.addEventListener('click', function () {
+                const item = this.closest('.item');
+                const colors = {
+                    'content': 'lightblue',
+                    'metadata': 'lightyellow',
+                    'title': 'lightseagreen',
+                    'subtitle': 'lightgray',
+                    'buttonGroup': 'lightpink',
+                    'button': 'aliceblue',
+                    'button a': 'lightseagreen'
+                };
+
+                Object.keys(colors).forEach(selector => {
+                    const elements = item.querySelectorAll(`.${selector}`);
+                    elements.forEach(el => {
+                        if (el.style.backgroundColor) {
+                            el.style.backgroundColor = '';
+                        } else {
+                            el.style.backgroundColor = colors[selector];
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
